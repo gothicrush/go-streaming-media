@@ -1,3 +1,20 @@
+r.Cookie("name")
+http.SetCookie(w,&http.Cookie{})
+
+t, _ := template.ParseFiles("a.html","b.html","c.html")
+t.ExecuteTemplate(w,"b", para)
+
+m.Store(k,v)
+m.Delete(k)
+m.Range( func(k interface{}, v interface{}) bool  )
+m.Load(k)
+m.LoadOrStore(k, v)
+
+string->int：strconv.Atoi(str)
+string->int64：strconv.ParseInt(str, 10, 64)
+int->string：strconv.Itoa(i)
+int64->string：strconv.FormatInt(int64, 10)
+
 ### API 模块
 
 #### User API
@@ -46,4 +63,22 @@
   }
   ```
 
-* 
+*
+
+CREATE DATABASE IF NOT EXISTS stream_media
+DEFAULT CHARSET utf8
+COLLATE utf8_general_ci;
+
+USE stream_media;
+
+CREATE TABLE IF NOT EXISTS user (
+    userid varchar(50) UNIQUE NOT NULL,
+    username varchar(20) UNIQUE NOT NULL,
+    password varchar(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS session (
+    username varchar(20) UNIQUE NOT NULL,
+    sessionid varchar(50) UNIQUE NOT NULL,
+    ttl varchar(50) NOT NULL
+);

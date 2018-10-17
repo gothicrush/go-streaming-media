@@ -1,16 +1,16 @@
 package main
 
 import (
-	"api"
-	"fmt"
+	"api/router"
+	"api/enhance"
 	"net/http"
 )
 
 func main() {
 
-	r := api.RegisterHandlers()
+	r := router.RegisterHandlers()
 
-    fmt.Println("listening")
+	enhanceRouter := enhance.NewEnhanceRouter(r)
 
-	http.ListenAndServe(":8080", r)
+	http.ListenAndServe(":8080", enhanceRouter)
 }

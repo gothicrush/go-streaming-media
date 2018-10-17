@@ -10,7 +10,7 @@ var (
 )
 
 func init() {
-	Conn = openConn("root","123456","mydb")
+	Conn = openConn("root","HIKARI27","stream_media")
 }
 
 func openConn(username string, password string, dbname string) *sql.DB {
